@@ -1,0 +1,29 @@
+# Write your query or mutation here
+mutation {
+  c1: insertCoin(coin:{
+    asset_id: "BTC"
+    name: "Bitcoin"
+    category:"Crypto"
+    price_usd: 30724.44
+  }){
+    asset_id
+  }
+  
+  c2: insertCoin(coin:{
+    asset_id: "ETH"
+    name: "Ethereum"
+    category:"Crypto"
+    price_usd: 1817.44
+  }){
+    asset_id
+  }
+  
+  c3: insertCoin(coin:{
+    asset_id: "GBP"
+    name: "Great British Pound"
+    category:"Crypto"
+    price_usd: 1.36
+  }){
+    asset_id
+  }
+}
