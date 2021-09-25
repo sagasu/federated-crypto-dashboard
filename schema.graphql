@@ -1,0 +1,26 @@
+mutation{
+deploySchema(
+  keyspace: "coins"
+  schema: """
+  type Coin @key @cql_input{
+    asset_id: String! @cql_column(partitionKey: true)
+    name: String
+    category: String @cql_index
+    price_usd: Float
+  }
+  type Mutation{
+    insertCoin(coin: CoinInput):Coin
+  }
+  type Query {
+    coinsByAssetIds(
+      asset_ids: [String] @cql_where(field: "asset_id", predicate: IN)
+    ): [Coin]
+      coinsByCategory(
+        category: String
+      ) : [Coin]
+  }
+    """
+  ) {
+    version
+  }
+}
