@@ -17,14 +17,14 @@ const gateway = new ApolloGateway({
     },
     {
         name: 'deals',
-        url: 'https://ca81359b-0b56-4eb4-a6ae-2b993ea3f0dd-eu-west-1.apps.astra.datastax.com/api/graphql/coins'
+        url: 'http://localhost:4001/graphql'
     }
 ],
 introspectionHeaders: {
     'x-cassandra-token': astraToken
 },
 buildService({name, url}){
-    if(name === 'coins'){
+    if(name == 'coins'){
         return new StargateGraphQLDataSource({url});
     }else{
         return new RemoteGraphQLDataSource({url});
