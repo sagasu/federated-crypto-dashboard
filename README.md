@@ -9,3 +9,4 @@ To run FE run (make sure that `start-deals` and `gateway` are already running):
 `cd crypto-dashboard`  
 `npm start`  
 
+![dashboard](./dashboard.png)
